@@ -2,15 +2,24 @@
   <app-highlighted-post
     [post]="highlightedPost"
   ></app-highlighted-post>
-
-  <h1>{{ 'POST.LIST.RECENT' | translate }}</h1>
   
+  <h1>{{ 'POST.LIST.RECENT' | translate }}</h1>
   <div *ngIf="postList.length">
-    <div *ngFor="let post of postList; index as i; trackBy: tranByFn">
-      <app-post-card [post]="post"></app-post-card>
+    <div class="post-container">
+      <ng-container *ngFor="let post of postList" >
+        <app-post-card [post]="post" ></app-post-card>
+      </ng-container>
+      <div
+        class="new-post inverted-secondary"
+        fxLayout="column"
+        fxLayoutAlign="center center">
+        <mat-icon>add_circle</mat-icon>
+        <p>{{ 'POST.CREATE.ADD' | translate }}</p>
+      </div>
     </div>
     <button
       mat-raised-button
+      color="primary"
       [disabled]="noMoreItems"
       (click)="loadMore()">
       {{ 'POST.LIST.LOAD_MORE' | translate }}

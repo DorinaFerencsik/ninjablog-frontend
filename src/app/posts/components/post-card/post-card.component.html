@@ -1,8 +1,14 @@
-<mat-card>
-  <mat-card-title>
-    {{ post.title }}
-  </mat-card-title>
-  <mat-card-content>
-    {{ post.body }}
-  </mat-card-content>
-</mat-card>
+<div class="post-card background-secondary">
+  <div class="header" fxLayout="row" fxLayoutGap="10px">
+    <app-user-avatar *ngIf="user" [user]="user" fxFlex="40px"></app-user-avatar>
+    <h2 color="primary" fxFlex>{{ post.title }}</h2>
+  </div>
+  <div class="content" fxLayout="row" fxLayoutGap="10px">
+    <div fxFlex="40px" fxLayout="column" fxLayoutAlign="start center">
+      <mat-icon>mode_comment</mat-icon>
+      <p>{{ comments?.length }}</p>
+    </div>
+    <div fxFlex>{{ post.body }}</div>
+  </div>
+</div>
+

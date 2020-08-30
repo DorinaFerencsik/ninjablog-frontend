@@ -1,4 +1,8 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { combineLatest } from 'rxjs';
+import { tap } from 'rxjs/operators';
+
+import { IComment } from '../../interfaces/comment.interface';
 import { IPost } from '../../interfaces/post.interface';
 import { ApiPostService } from '../../services/api-post.service';
 
@@ -7,11 +11,25 @@ import { ApiPostService } from '../../services/api-post.service';
   templateUrl: './post-card.component.html',
   styleUrls: ['./post-card.component.scss'],
 })
-export class PostCardComponent {
+export class PostCardComponent implements OnInit {
 
   @Input()
   public post: IPost;
 
+  public comments: IComment[];
+  public user: any;
+
   constructor(private apiService: ApiPostService) { }
 
+  public ngOnInit() {
+    combineLatest([
+      this.apiService.getUser(this.post.userId),
+      this.apiService.getCommentList(this.post.id),
+    ]).pipe(
+      tap(([user, comments]) => {
+        this.user = user;
+        this.comments = comments;
+      })
+    ).subscribe();
+  }
 }

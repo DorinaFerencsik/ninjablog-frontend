@@ -6,8 +6,11 @@ import { MatCardModule } from '@angular/material/card';
 import { MatIconModule } from '@angular/material/icon';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { TranslateModule } from '@ngx-translate/core';
+import { UserAvatarComponent } from './components/user-avatar/user-avatar.component';
 
-const components = [];
+const components = [
+  UserAvatarComponent,
+];
 
 const vendorModules = [
   FlexLayoutModule,
@@ -28,6 +31,7 @@ const vendorModules = [
   ],
   exports: [
     CommonModule,
+    ...components,
     ...vendorModules,
   ],
 })

@@ -35,4 +35,12 @@ export class ApiPostService {
   public getCommentList(postId: number): Observable<IComment[]> {
     return this.httpClient.get(`posts/${postId}/comments`);
   }
+
+  /**
+   * Get user details
+   * @param userId id of user
+   */
+  public getUser(userId: number): Observable<any> {
+    return this.httpClient.get(`users/${userId}`);
+  }
 }

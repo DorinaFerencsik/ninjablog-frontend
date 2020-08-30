@@ -1,0 +1,12 @@
+.post-container {
+  display: grid;
+  grid-gap: 20px;
+  grid-template-columns: repeat(3, calc(100%/3 - 20px));
+
+  .new-post {
+    border: 2px dashed;
+    border-radius: 8px;
+    min-height: 170px;
+    font-weight: bold;
+  }
+}
