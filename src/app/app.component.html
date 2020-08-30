@@ -1,16 +1,17 @@
-<div class="app-container" fxLayout="column">
-  <app-header></app-header>
-
-  <div class="content-wrapper"
-       fxFlex
-       fxLayout="row"
-       fxLayoutAlign="center">
-    <div fxFlex="70%"
-         fxFlex.lt-md="80%"
-         fxFlex.lt-sm="95%">
-      <router-outlet></router-outlet>
+<div class="app-container" [ngClass]="(useDarkTheme | async) ? 'dark' : 'light'">
+  <div class="background" fxLayout="column" fxFlex="100%">
+    <app-header></app-header>
+    <div class="content-wrapper"
+          fxFlex
+          fxLayout="row"
+          fxLayoutAlign="center">
+      <div fxFlex="70%"
+            fxFlex.lt-md="80%"
+            fxFlex.lt-sm="95%">
+        <router-outlet></router-outlet>
+      </div>
     </div>
+  
+    <app-footer></app-footer>
   </div>
-
-  <app-footer></app-footer>
 </div>
