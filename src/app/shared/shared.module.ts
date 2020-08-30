@@ -1,9 +1,12 @@
-import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { NgModule } from '@angular/core';
+import { TranslateModule } from '@ngx-translate/core';
 
 const components = [];
 
-const vendorModules = [];
+const vendorModules = [
+  TranslateModule,
+];
 
 @NgModule({
   declarations: [

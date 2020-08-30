@@ -7,4 +7,9 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   public title = 'ninjablog-frontend';
+
+  constructor(private translateService: TranslateService) {
+    this.translateService.setDefaultLang('en');
+  }
+
 }

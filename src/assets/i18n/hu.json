@@ -1,0 +1,13 @@
+{
+  "COMMON": {
+  
+  },
+  "POST": {
+    "LIST": {
+      "RECENT": "Legújabb posztok"
+    },
+    "CREATE": {
+      "ADD": "Új poszt közzététele"
+    }
+  }
+}
