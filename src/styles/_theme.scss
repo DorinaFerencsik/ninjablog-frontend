@@ -7,13 +7,11 @@ $ninjablog-frontend-accent: mat-palette($mat-pink, A200, A100, A400);
 
 $ninjablog-frontend-warn: mat-palette($mat-red);
 
-$ninjablog-frontend-theme: mat-light-theme((
-  color: (
-    primary: $ninjablog-frontend-primary,
-    accent: $ninjablog-frontend-accent,
-    warn: $ninjablog-frontend-warn,
-  )
-));
+$ninjablog-frontend-theme: mat-light-theme(
+  $ninjablog-frontend-primary,
+  $ninjablog-frontend-accent,
+  $ninjablog-frontend-warn,
+);
 
 @include angular-material-theme($ninjablog-frontend-theme);
 
