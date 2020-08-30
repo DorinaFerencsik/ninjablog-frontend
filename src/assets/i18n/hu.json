@@ -4,7 +4,8 @@
   },
   "POST": {
     "LIST": {
-      "RECENT": "Legújabb posztok"
+      "RECENT": "Legújabb posztok",
+      "LOAD_MORE": "Több betöltése"
     },
     "CREATE": {
       "ADD": "Új poszt közzététele"
