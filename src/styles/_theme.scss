@@ -1,0 +1,21 @@
+@import '~@angular/material/theming';
+
+@include mat-core();
+
+$ninjablog-frontend-primary: mat-palette($mat-indigo);
+$ninjablog-frontend-accent: mat-palette($mat-pink, A200, A100, A400);
+
+$ninjablog-frontend-warn: mat-palette($mat-red);
+
+$ninjablog-frontend-theme: mat-light-theme((
+  color: (
+    primary: $ninjablog-frontend-primary,
+    accent: $ninjablog-frontend-accent,
+    warn: $ninjablog-frontend-warn,
+  )
+));
+
+@include angular-material-theme($ninjablog-frontend-theme);
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
