@@ -1,6 +1,6 @@
 {
   "COMMON": {
-  
+    "CLOSE": "Close"
   },
   "POST": {
     "LIST": {
@@ -10,5 +10,8 @@
     "CREATE": {
       "ADD": "Add new post"
     }
+  },
+  "COMMENT": {
+    "TITLE": "Comments"
   }
 }

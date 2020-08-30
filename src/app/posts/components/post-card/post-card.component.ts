@@ -1,10 +1,12 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { MatBottomSheet } from '@angular/material/bottom-sheet';
 import { combineLatest } from 'rxjs';
 import { tap } from 'rxjs/operators';
 
 import { IComment } from '../../interfaces/comment.interface';
 import { IPost } from '../../interfaces/post.interface';
 import { ApiPostService } from '../../services/api-post.service';
+import { CommentOverlayComponent } from '../comment-overlay/comment-overlay.component';
 
 @Component({
   selector: 'app-post-card',
@@ -19,7 +21,8 @@ export class PostCardComponent implements OnInit {
   public comments: IComment[];
   public user: any;
 
-  constructor(private apiService: ApiPostService) { }
+  constructor(private apiService: ApiPostService,
+              private bottomSheet: MatBottomSheet) { }
 
   public ngOnInit() {
     combineLatest([
@@ -31,5 +34,14 @@ export class PostCardComponent implements OnInit {
         this.comments = comments;
       })
     ).subscribe();
+  }
+
+  public openComments() {
+    this.bottomSheet.open(
+      CommentOverlayComponent,
+      {
+        data: this.comments,
+      }
+    );
   }
 }

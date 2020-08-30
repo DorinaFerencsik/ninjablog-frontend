@@ -8,11 +8,11 @@ import { Component, Input, OnInit } from '@angular/core';
 export class UserAvatarComponent implements OnInit {
 
   @Input()
-  public user: any;
+  public name: string;
 
   public monogram: string;
 
-  public backgroundColor;
+  public backgroundColor = '#cecece';
 
   public readonly colors = [
     '#FF8080',
@@ -25,8 +25,16 @@ export class UserAvatarComponent implements OnInit {
   constructor() { }
 
   public ngOnInit(): void {
-    this.monogram = this.user.name.split(' ', 2).map(d => d.substring(0, 1)).join('');
-    this.backgroundColor = this.colors[Math.floor(this.user.id / 2)];
+    this.monogram = this.name.split(' ', 2).map(d => d.substring(0, 1)).join('');
+    this.backgroundColor = this.colors[this.textToNumber(this.monogram) % this.colors.length];
+  }
+
+  private textToNumber(text: string) {
+    const charCodes = text
+      .split('')
+      .map(char => char.charCodeAt(0))
+      .join('');
+    return parseInt(charCodes, 10);
   }
 
 }

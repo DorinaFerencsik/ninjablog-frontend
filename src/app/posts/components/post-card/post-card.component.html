@@ -1,14 +1,16 @@
 <div class="post-card background-secondary">
   <div class="header" fxLayout="row" fxLayoutGap="10px">
-    <app-user-avatar *ngIf="user" [user]="user" fxFlex="40px"></app-user-avatar>
+    <app-user-avatar *ngIf="user" [name]="user.name" fxFlex="40px"></app-user-avatar>
     <h2 color="primary" fxFlex>{{ post.title }}</h2>
   </div>
+
   <div class="content" fxLayout="row" fxLayoutGap="10px">
     <div fxFlex="40px" fxLayout="column" fxLayoutAlign="start center">
-      <mat-icon>mode_comment</mat-icon>
+      <button mat-icon-button (click)="openComments()">
+        <mat-icon>mode_comment</mat-icon>
+      </button>
       <p>{{ comments?.length }}</p>
     </div>
     <div fxFlex>{{ post.body }}</div>
   </div>
 </div>
-
