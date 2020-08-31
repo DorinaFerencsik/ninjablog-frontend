@@ -18,12 +18,14 @@
         <p>{{ 'POST.LIST.ADD' | translate }}</p>
       </div>
     </div>
-    <button
-      mat-raised-button
-      color="primary"
-      [disabled]="noMoreItems"
-      (click)="loadMore()">
-      {{ 'POST.LIST.LOAD_MORE' | translate }}
-    </button>
+    <div class="load-more-container">
+      <button
+        mat-stroked-button
+        color="primary"
+        [disabled]="noMoreItems"
+        (click)="loadMore()">
+        {{ 'POST.LIST.LOAD_MORE' | translate }}
+      </button>
+    </div>
   </div>
 </div>

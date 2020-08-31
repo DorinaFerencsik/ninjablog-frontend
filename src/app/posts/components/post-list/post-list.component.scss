@@ -1,7 +1,17 @@
+@import '_media-queries';
+
 .post-container {
   display: grid;
-  grid-gap: 20px;
-  grid-template-columns: repeat(3, calc(100%/3 - 20px));
+  grid-gap: 21px;
+  grid-template-columns: repeat(3, calc(100%/3 - 14px));
+
+  @include lt-lg {
+    grid-gap: 15px;
+    grid-template-columns: repeat(2, calc(100%/2 - 10px));
+  }
+  @include lt-md {
+    grid-template-columns: 100%;
+  }
 
   .new-post {
     border: 2px dashed;
@@ -12,6 +22,22 @@
     &:hover {
       color: #b5c6ef;
       cursor: pointer;
+    }
+  }
+}
+
+.load-more-container {
+  text-align: center;
+  margin-top: 30px;
+
+  button {
+    width: calc(100%/3 - 14px);
+
+    @include lt-lg {
+      width: calc(100%/2 - 10px)
+    }
+    @include lt-md {
+      width: 100%;
     }
   }
 }

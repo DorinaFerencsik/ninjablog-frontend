@@ -54,7 +54,7 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 
 .dark {
   @include angular-material-theme($ninjablog-dark-theme);
-  color: white;
+  color: #FFFFFFD9;
 
   .background {
     background-color: $background-dark;

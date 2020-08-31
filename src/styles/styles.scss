@@ -1,18 +1,22 @@
-@import 'media-queries';
+@import '_media-queries';
 
 p {
   margin: 0;
 }
 
 .cdk-overlay-pane {
-  &.narrow {
-    @include lg {
-      width: 520px;
-    }
-  }
-
   &.wide {
-    @include lg {
+    @include xs {
+      width: 95%;
+      max-width: 95% !important;
+    }
+    @include sm {
+      width: 80%;
+    }
+    @include md {
+      width: 640px;
+    }
+    @include gt-md {
       width: 720px;
     }
   }

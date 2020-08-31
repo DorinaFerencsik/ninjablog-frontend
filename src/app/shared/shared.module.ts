@@ -9,6 +9,7 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { MatIconModule } from '@angular/material/icon';
 import { MatInputModule } from '@angular/material/input';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
+import { MatToolbarModule } from '@angular/material/toolbar';
 import { TranslateModule } from '@ngx-translate/core';
 
 import { UserAvatarComponent } from './components/user-avatar/user-avatar.component';
@@ -26,6 +27,7 @@ const vendorModules = [
   MatIconModule,
   MatInputModule,
   MatSlideToggleModule,
+  MatToolbarModule,
   ReactiveFormsModule,
   TranslateModule,
 ];
