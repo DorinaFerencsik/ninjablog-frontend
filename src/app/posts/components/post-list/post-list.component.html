@@ -12,9 +12,10 @@
       <div
         class="new-post inverted-secondary"
         fxLayout="column"
-        fxLayoutAlign="center center">
+        fxLayoutAlign="center center"
+        (click)="openCreateDialog()">
         <mat-icon>add_circle</mat-icon>
-        <p>{{ 'POST.CREATE.ADD' | translate }}</p>
+        <p>{{ 'POST.LIST.ADD' | translate }}</p>
       </div>
     </div>
     <button

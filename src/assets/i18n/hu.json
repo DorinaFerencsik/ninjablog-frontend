@@ -1,17 +1,30 @@
 {
   "COMMON": {
-    "CLOSE": "Close"
+    "BUTTON": {
+      "CLOSE": "Bezárás",
+      "CANCEL": "Mégse",
+      "CREATE": "Létrehozás"
+    },
+    "ERROR": {
+      "REQUIRED": "Kötelező mező",
+      "MAXLENGTH": "Meghaladja a max. {{max}} karaktert"
+    }
   },
   "POST": {
     "LIST": {
       "RECENT": "Legújabb posztok",
-      "LOAD_MORE": "Több betöltése"
+      "LOAD_MORE": "Több betöltése",
+      "ADD": "Új poszt közzététele"
     },
     "CREATE": {
-      "ADD": "Új poszt közzététele"
+      "TITLE": "Új poszt",
+      "FIELD": {
+        "TITLE": "Cím",
+        "BODY": "Tartalom"
+      }
     }
   },
   "COMMENT": {
-    "TITLE": "Comments"
+    "TITLE": "Kommentek"
   }
 }

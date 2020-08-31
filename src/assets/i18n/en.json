@@ -1,14 +1,27 @@
 {
   "COMMON": {
-    "CLOSE": "Close"
+    "BUTTON": {
+      "CLOSE": "Close",
+      "CANCEL": "Cancel",
+      "CREATE": "Create"
+    },
+    "ERROR": {
+      "REQUIRED": "Required field",
+      "MAXLENGTH": "Exceeds max. length of {{max}} characters"
+    }
   },
   "POST": {
     "LIST": {
       "RECENT": "Recent posts",
-      "LOAD_MORE": "Load more"
+      "LOAD_MORE": "Load more",
+      "ADD": "Add new post"
     },
     "CREATE": {
-      "ADD": "Add new post"
+      "TITLE": "New post",
+      "FIELD": {
+        "TITLE": "Title",
+        "BODY": "Body"
+      }
     }
   },
   "COMMENT": {

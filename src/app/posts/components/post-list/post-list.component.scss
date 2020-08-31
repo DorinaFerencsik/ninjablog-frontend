@@ -8,5 +8,10 @@
     border-radius: 8px;
     min-height: 170px;
     font-weight: bold;
+
+    &:hover {
+      color: #b5c6ef;
+      cursor: pointer;
+    }
   }
 }

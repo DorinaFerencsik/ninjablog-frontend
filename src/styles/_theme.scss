@@ -28,8 +28,8 @@ $ninjablog-dark-theme: mat-dark-theme(
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 
+@include angular-material-theme($ninjablog-light-theme);
 .light {
-  @include angular-material-theme($ninjablog-light-theme);
   color: #414141;
 
   .background {

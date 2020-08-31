@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 
+import { MatDialog } from '@angular/material/dialog';
 import { IPost } from '../../interfaces/post.interface';
 import { ApiPostService } from '../../services/api-post.service';
+import { CreatePostDialogComponent } from '../create-post-dialog/create-post-dialog.component';
 
 @Component({
   selector: 'app-post-list',
@@ -18,7 +20,8 @@ export class PostListComponent implements OnInit {
   private pageIndex = 0;
   private fullPostList: IPost[];
 
-  constructor(private apiService: ApiPostService) { }
+  constructor(private apiService: ApiPostService,
+              private dialog: MatDialog) { }
 
   public ngOnInit(): void {
     this.apiService.getPostList().subscribe((postList) => {
@@ -26,6 +29,10 @@ export class PostListComponent implements OnInit {
       this.highlightedPost = this.fullPostList[0];
       this.paginateList();
     });
+  }
+
+  public openCreateDialog() {
+    this.dialog.open(CreatePostDialogComponent, { panelClass: 'wide' });
   }
 
   public loadMore() {

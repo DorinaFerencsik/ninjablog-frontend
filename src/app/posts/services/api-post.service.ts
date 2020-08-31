@@ -24,7 +24,7 @@ export class ApiPostService {
    * Creat new post
    * @param details details of new post
    */
-  public postNewPost(details: IPost): Observable<any> {
+  public postNewPost(details: Partial<IPost>): Observable<any> {
     return this.httpClient.post('posts', details);
   }
 
