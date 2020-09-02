@@ -24,7 +24,7 @@ export class ApiPostService {
    * Creat new post
    * @param details details of new post
    */
-  public postNewPost(details: Partial<IPost>): Observable<any> {
+  public postNewPost(details: Partial<IPost>): Observable<Partial<IPost>> {
     return this.httpClient.post('posts', details);
   }
 
@@ -36,11 +36,4 @@ export class ApiPostService {
     return this.httpClient.get(`posts/${postId}/comments`);
   }
 
-  /**
-   * Get user details
-   * @param userId id of user
-   */
-  public getUser(userId: number): Observable<any> {
-    return this.httpClient.get(`users/${userId}`);
-  }
 }

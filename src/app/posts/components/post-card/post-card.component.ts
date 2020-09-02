@@ -3,6 +3,9 @@ import { MatBottomSheet } from '@angular/material/bottom-sheet';
 import { combineLatest } from 'rxjs';
 import { tap } from 'rxjs/operators';
 
+import { IUser } from 'src/app/auth/interfaces/user.interface';
+import { ApiAuthService } from 'src/app/auth/services/api-auth.service';
+
 import { IComment } from '../../interfaces/comment.interface';
 import { IPost } from '../../interfaces/post.interface';
 import { ApiPostService } from '../../services/api-post.service';
@@ -19,14 +22,15 @@ export class PostCardComponent implements OnInit {
   public post: IPost;
 
   public comments: IComment[];
-  public user: any;
+  public user: IUser;
 
   constructor(protected apiService: ApiPostService,
-              protected bottomSheet: MatBottomSheet) { }
+              protected bottomSheet: MatBottomSheet,
+              private apiAuthService: ApiAuthService) { }
 
   public ngOnInit() {
     combineLatest([
-      this.apiService.getUser(this.post.userId),
+      this.apiAuthService.getUser(this.post.userId),
       this.apiService.getCommentList(this.post.id),
     ]).pipe(
       tap(([user, comments]) => {

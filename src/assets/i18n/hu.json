@@ -3,12 +3,18 @@
     "BUTTON": {
       "CLOSE": "Bezárás",
       "CANCEL": "Mégse",
-      "CREATE": "Létrehozás"
+      "CREATE": "Létrehozás",
+      "DARK_MODE": "Sötét mód"
     },
     "ERROR": {
       "REQUIRED": "Kötelező mező",
       "MAXLENGTH": "Meghaladja a max. {{max}} karaktert"
     }
+  },
+  "AUTH": {
+    "GREETING": "Üdv, ",
+    "LOGIN": "Bejelentkezés random felhasználóval",
+    "LOGOUT": "Kijelentkezés"
   },
   "POST": {
     "LIST": {

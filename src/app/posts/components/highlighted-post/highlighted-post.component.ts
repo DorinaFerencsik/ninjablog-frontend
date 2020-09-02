@@ -1,5 +1,8 @@
-import { Component, Input } from '@angular/core';
+import { Component } from '@angular/core';
 import { MatBottomSheet } from '@angular/material/bottom-sheet';
+
+import { ApiAuthService } from 'src/app/auth/services/api-auth.service';
+
 import { ApiPostService } from '../../services/api-post.service';
 import { PostCardComponent } from '../post-card/post-card.component';
 
@@ -11,8 +14,9 @@ import { PostCardComponent } from '../post-card/post-card.component';
 export class HighlightedPostComponent extends PostCardComponent {
 
   constructor(protected apiService: ApiPostService,
-              protected bottomSheet: MatBottomSheet) {
-    super(apiService, bottomSheet);
+              protected bottomSheet: MatBottomSheet,
+              private authApiService: ApiAuthService) {
+    super(apiService, bottomSheet, authApiService);
   }
 
 }

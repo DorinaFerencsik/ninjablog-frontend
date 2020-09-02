@@ -8,6 +8,7 @@ import { MatCardModule } from '@angular/material/card';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatIconModule } from '@angular/material/icon';
 import { MatInputModule } from '@angular/material/input';
+import { MatMenuModule } from '@angular/material/menu';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { TranslateModule } from '@ngx-translate/core';
@@ -26,6 +27,7 @@ const vendorModules = [
   MatDialogModule,
   MatIconModule,
   MatInputModule,
+  MatMenuModule,
   MatSlideToggleModule,
   MatToolbarModule,
   ReactiveFormsModule,

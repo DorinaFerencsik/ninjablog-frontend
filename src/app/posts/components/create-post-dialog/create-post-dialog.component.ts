@@ -1,7 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MatDialogRef } from '@angular/material/dialog';
 import { tap } from 'rxjs/operators';
+
+import { AuthService } from 'src/app/auth/services/auth.service';
 
 import { ApiPostService } from '../../services/api-post.service';
 
@@ -16,6 +18,7 @@ export class CreatePostDialogComponent {
 
   constructor(private dialogRef: MatDialogRef<CreatePostDialogComponent>,
               private apiService: ApiPostService,
+              private authService: AuthService,
               private formBuilder: FormBuilder) {
     this.formGroup = this.formBuilder.group({
       title: ['', [Validators.required, Validators.maxLength(50)]],
@@ -25,7 +28,7 @@ export class CreatePostDialogComponent {
 
   public createPost() {
     this.apiService.postNewPost({
-      userId: 10,
+      userId: this.authService.getUserDetail().id,
       ...this.formGroup.value,
     }).pipe(
       tap(response => this.dialogRef.close(response))

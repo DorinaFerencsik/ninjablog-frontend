@@ -3,12 +3,18 @@
     "BUTTON": {
       "CLOSE": "Close",
       "CANCEL": "Cancel",
-      "CREATE": "Create"
+      "CREATE": "Create",
+      "DARK_MODE": "Dark mode"
     },
     "ERROR": {
       "REQUIRED": "Required field",
       "MAXLENGTH": "Exceeds max. length of {{max}} characters"
     }
+  },
+  "AUTH": {
+    "GREETING": "Hi, ",
+    "LOGIN": "Login with random user",
+    "LOGOUT": "Logout"
   },
   "POST": {
     "LIST": {
