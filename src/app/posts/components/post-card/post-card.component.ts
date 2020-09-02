@@ -41,6 +41,7 @@ export class PostCardComponent implements OnInit {
       CommentOverlayComponent,
       {
         data: this.comments,
+        panelClass: 'wide',
       }
     );
   }

@@ -24,8 +24,11 @@ export class CreatePostDialogComponent {
   }
 
   public createPost() {
-    this.apiService.postNewPost(this.formGroup.value).pipe(
-      tap(() => this.dialogRef.close())
+    this.apiService.postNewPost({
+      userId: 10,
+      ...this.formGroup.value,
+    }).pipe(
+      tap(response => this.dialogRef.close(response))
     ).subscribe();
   }
 

@@ -25,6 +25,7 @@
     }
   },
   "COMMENT": {
-    "TITLE": "Kommentek"
+    "TITLE": "Kommentek",
+    "NO_RESULT": "Nincsenek kommentek"
   }
 }

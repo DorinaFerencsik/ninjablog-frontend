@@ -25,6 +25,7 @@
     }
   },
   "COMMENT": {
-    "TITLE": "Comments"
+    "TITLE": "Comments",
+    "NO_RESULT": "There aren't any comments"
   }
 }

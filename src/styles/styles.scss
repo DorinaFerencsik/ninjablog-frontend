@@ -25,7 +25,8 @@ p {
   margin: 0;
 }
 
-.cdk-overlay-pane {
+.cdk-overlay-pane,
+.mat-bottom-sheet-container {
   &.wide {
     @include xs {
       width: 95%;

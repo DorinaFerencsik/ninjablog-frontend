@@ -32,7 +32,12 @@ export class PostListComponent implements OnInit {
   }
 
   public openCreateDialog() {
-    this.dialog.open(CreatePostDialogComponent, { panelClass: 'wide' });
+    const dialogRef = this.dialog.open(CreatePostDialogComponent, { panelClass: 'wide' });
+    dialogRef.afterClosed().subscribe(result => {
+      if (result) {
+        this.postList.push(result);
+      }
+    });
   }
 
   public loadMore() {
