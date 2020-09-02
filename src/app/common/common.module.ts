@@ -1,3 +1,4 @@
+import { OverlayModule} from '@angular/cdk/overlay';
 import { NgModule } from '@angular/core';
 
 import { SharedModule } from '../shared/shared.module';
@@ -15,6 +16,7 @@ const components = [
     ...components,
   ],
   imports: [
+    OverlayModule,
     SharedModule,
   ],
   exports: [

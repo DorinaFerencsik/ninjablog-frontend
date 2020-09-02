@@ -1,4 +1,4 @@
-<div class="app-container" [ngClass]="(useDarkTheme | async) ? 'dark' : 'light'">
+<div class="app-container" [ngClass]="(theme | async) || 'light'">
   <div class="background" fxLayout="column" fxFlex="100%">
     <app-header></app-header>
     <div class="content-wrapper"

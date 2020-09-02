@@ -1,7 +1,8 @@
 import { Component } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
 import { Subject } from 'rxjs';
-import { ThemeService } from './common/services/theme.service';
+
+import { Theme, ThemeService } from './common/services/theme.service';
 
 @Component({
   selector: 'app-root',
@@ -9,13 +10,12 @@ import { ThemeService } from './common/services/theme.service';
   styleUrls: ['./app.component.scss'],
 })
 export class AppComponent {
-  public title = 'ninjablog-frontend';
-  public useDarkTheme: Subject<boolean>;
+  public theme: Subject<Theme>;
 
   constructor(private translateService: TranslateService,
               private themeService: ThemeService) {
     this.translateService.setDefaultLang('en');
-    this.useDarkTheme = this.themeService.getDarkTheme();
+    this.theme = this.themeService.getTheme();
   }
 
 }

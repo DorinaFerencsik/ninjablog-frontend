@@ -25,11 +25,28 @@ $ninjablog-dark-theme: mat-dark-theme(
   $ninjablog-dark-warn,
 );
 
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+@mixin component-theme($theme) {
+  $primary: map-get($theme, primary);
+  $accent: map-get($theme, accent);
 
-@include angular-material-theme($ninjablog-light-theme);
+  .highlighted-card {
+    background-color: mat-color($primary);
+  }
+
+  .inverted-card {
+    color: mat-color($primary, 400);
+    border: mat-color($primary, 400);
+    &:hover {
+      color: mat-color($primary, 600);
+      border: mat-color($primary, 600);
+    }
+  }
+}
+
 .light {
+  @include angular-material-theme($ninjablog-light-theme);
+  @include component-theme($ninjablog-light-theme);
+
   color: #414141;
 
   .background {
@@ -39,21 +56,12 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
       background-color: $background-secondary;
     }
   }
-
-  .inverted {
-    color: $background;
-    border: $background;
-
-    &-secondary {
-      color: $background-secondary;
-      border: $background-secondary;
-    }
-  }
 }
-
 
 .dark {
   @include angular-material-theme($ninjablog-dark-theme);
+  @include component-theme($ninjablog-dark-theme);
+
   color: #FFFFFFD9;
 
   .background {
@@ -63,14 +71,6 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
       background-color: $background-dark-secondary;
     }
   }
-
-  .inverted {
-    color: $background-dark;
-    border: $background-dark;
-
-    &-secondary {
-      color: $background-dark-secondary;
-      border: $background-dark-secondary;
-    }
-  }
 }
+
+
