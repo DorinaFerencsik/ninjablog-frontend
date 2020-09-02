@@ -29,6 +29,10 @@ $ninjablog-dark-theme: mat-dark-theme(
   $primary: map-get($theme, primary);
   $accent: map-get($theme, accent);
 
+  a {
+    color: mat-color($accent);
+  }
+
   .highlighted-card {
     background-color: mat-color($primary);
   }
