@@ -1,16 +1,18 @@
 import { Component, Input } from '@angular/core';
-import { IPost } from '../../interfaces/post.interface';
+import { MatBottomSheet } from '@angular/material/bottom-sheet';
+import { ApiPostService } from '../../services/api-post.service';
+import { PostCardComponent } from '../post-card/post-card.component';
 
 @Component({
   selector: 'app-highlighted-post',
   templateUrl: './highlighted-post.component.html',
   styleUrls: ['./highlighted-post.component.scss'],
 })
-export class HighlightedPostComponent  {
+export class HighlightedPostComponent extends PostCardComponent {
 
-  @Input()
-  public post: IPost;
-
-  constructor() { }
+  constructor(protected apiService: ApiPostService,
+              protected bottomSheet: MatBottomSheet) {
+    super(apiService, bottomSheet);
+  }
 
 }

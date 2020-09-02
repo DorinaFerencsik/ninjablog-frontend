@@ -1,5 +1,6 @@
 <div>
   <app-highlighted-post
+    *ngIf="highlightedPost"
     [post]="highlightedPost"
   ></app-highlighted-post>
   
@@ -10,7 +11,7 @@
         <app-post-card [post]="post" ></app-post-card>
       </ng-container>
       <div
-        class="new-post inverted-secondary"
+        class="new-post inverted-card"
         fxLayout="column"
         fxLayoutAlign="center center"
         (click)="openCreateDialog()">

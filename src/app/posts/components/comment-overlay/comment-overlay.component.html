@@ -1,17 +1,12 @@
 <h1 >{{ 'COMMENT.TITLE' | translate }}</h1>
 
-<div *ngFor="let comment of data"
-     class="comment-wrapper"
-     fxLayout="row"
-     fxLayoutGap="10px">
-  <app-user-avatar [name]="comment.name" fxFlex="40px"></app-user-avatar>
-  <p fxFlex="70%">{{ comment.body }}</p>
-</div>
+<app-comment-card
+  [comments]="data"
+></app-comment-card>
 
 <div class="action-container">
   <button
-    mat-raised-button
-    color="accent"
+    mat-stroked-button
     (click)="close()">
     {{'COMMON.BUTTON.CLOSE' | translate }}
   </button>

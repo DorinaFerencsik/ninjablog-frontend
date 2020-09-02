@@ -21,8 +21,8 @@ export class PostCardComponent implements OnInit {
   public comments: IComment[];
   public user: any;
 
-  constructor(private apiService: ApiPostService,
-              private bottomSheet: MatBottomSheet) { }
+  constructor(protected apiService: ApiPostService,
+              protected bottomSheet: MatBottomSheet) { }
 
   public ngOnInit() {
     combineLatest([

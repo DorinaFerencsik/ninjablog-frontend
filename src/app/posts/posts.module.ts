@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 
 import { SharedModule } from 'src/app/shared/shared.module';
 
+import { CommentCardComponent } from './components/comment-card/comment-card.component';
 import { CommentOverlayComponent } from './components/comment-overlay/comment-overlay.component';
 import { CreatePostDialogComponent } from './components/create-post-dialog/create-post-dialog.component';
 import { HighlightedPostComponent } from './components/highlighted-post/highlighted-post.component';
@@ -12,6 +13,7 @@ import { PostsRoutingModule } from './posts-routing.module';
 
 const components = [
   CreatePostDialogComponent,
+  CommentCardComponent,
   CommentOverlayComponent,
   HighlightedPostComponent,
   PostCardComponent,
