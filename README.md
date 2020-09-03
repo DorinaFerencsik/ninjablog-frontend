@@ -24,3 +24,15 @@ Run `ng build` to build the project. The build artifacts will be stored in the `
 
 
 See `package.json` file for detailed version informations.
+
+
+## Tested on
+Both PC and Android:
+- Chrome
+- Firefox
+- Microsoft Edge
+- Opera
+
+And on Android:
+- Samsung Internet
+
