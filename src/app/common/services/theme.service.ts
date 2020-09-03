@@ -9,7 +9,7 @@ export type Theme = 'light' | 'dark';
 })
 export class ThemeService {
 
-  private theme = new Subject<Theme>();
+  private theme$ = new Subject<Theme>();
 
   constructor(private overlayContainer: OverlayContainer) {
     this.overlayContainer.getContainerElement().classList.add('light');
@@ -20,10 +20,10 @@ export class ThemeService {
 
     this.overlayContainer.getContainerElement().classList.remove(isDarkTheme ? 'light' : 'dark');
     this.overlayContainer.getContainerElement().classList.add(theme);
-    this.theme.next(theme);
+    this.theme$.next(theme);
   }
 
-  public getTheme() {
-    return this.theme;
+  public getTheme(): Subject<Theme> {
+    return this.theme$;
   }
 }

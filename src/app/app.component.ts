@@ -10,12 +10,12 @@ import { Theme, ThemeService } from './common/services/theme.service';
   styleUrls: ['./app.component.scss'],
 })
 export class AppComponent {
-  public theme: Subject<Theme>;
+  public theme$: Subject<Theme>;
 
   constructor(private translateService: TranslateService,
               private themeService: ThemeService) {
     this.translateService.setDefaultLang('en');
-    this.theme = this.themeService.getTheme();
+    this.theme$ = this.themeService.getTheme();
   }
 
 }

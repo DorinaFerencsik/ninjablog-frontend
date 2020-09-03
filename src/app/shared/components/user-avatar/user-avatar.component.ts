@@ -9,12 +9,10 @@ export class UserAvatarComponent implements OnInit {
 
   @Input()
   public name: string;
-
   public monogram: string;
-
   public backgroundColor = '#cecece';
 
-  public readonly colors = [
+  private readonly colors = [
     '#FF8080',
     '#305F72',
     '#5BA19B',

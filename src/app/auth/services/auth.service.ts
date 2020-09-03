@@ -17,6 +17,9 @@ export class AuthService {
   constructor(private apiService: ApiAuthService,
               private dialog: MatDialog) { }
 
+  /**
+   * Login with one of the available users
+   */
   public login(): Observable<any> {
     const id = Math.floor(Math.random() * (10 - 1) + 2);
     return this.apiService
@@ -30,14 +33,24 @@ export class AuthService {
     this.user$.next(null);
   }
 
-  public getUser() {
+  /**
+   * Returns with the user details as BehaviorSubject
+   */
+  public getUser(): BehaviorSubject<IUser> {
     return this.user$;
   }
 
-  public getUserDetail() {
-    return this.user$.value;
+  /**
+   * Returns with the current user details, synchronously
+   */
+  public getUserDetail(): IUser {
+    return this.user$.getValue();
   }
 
+  /**
+   * Checks whether the user is logged in and promts them to login if not.
+   * @param callback function to call on login
+   */
   public loggedInPreCheck(callback) {
     if (this.user$.value) {
       callback();
