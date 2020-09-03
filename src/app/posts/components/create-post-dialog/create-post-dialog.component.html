@@ -19,6 +19,9 @@
       <mat-error *ngIf="formGroup.get('body').hasError('required')">
         {{ 'COMMON.ERROR.REQUIRED' | translate }}
       </mat-error>
+      <mat-error *ngIf="formGroup.get('body').hasError('maxlength')">
+        {{ 'COMMON.ERROR.MAX_LENGTH' | translate: { max: 250 } }}
+      </mat-error>
     </mat-form-field>
   </form>
 </div>

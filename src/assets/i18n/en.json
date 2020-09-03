@@ -8,7 +8,7 @@
     },
     "ERROR": {
       "REQUIRED": "Required field",
-      "MAXLENGTH": "Exceeds max. length of {{max}} characters"
+      "MAX_LENGTH": "Exceeds max. length of {{max}} characters"
     }
   },
   "AUTH": {

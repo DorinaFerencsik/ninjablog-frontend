@@ -22,7 +22,7 @@ export class CreatePostDialogComponent {
               private formBuilder: FormBuilder) {
     this.formGroup = this.formBuilder.group({
       title: ['', [Validators.required, Validators.maxLength(50)]],
-      body: ['', [Validators.required]],
+      body: ['', [Validators.required, Validators.maxLength(250)]]
     });
   }
 

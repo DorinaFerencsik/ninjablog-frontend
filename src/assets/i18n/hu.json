@@ -8,7 +8,7 @@
     },
     "ERROR": {
       "REQUIRED": "Kötelező mező",
-      "MAXLENGTH": "Meghaladja a max. {{max}} karaktert"
+      "MAX_LENGTH": "Meghaladja a max. {{max}} karaktert"
     }
   },
   "AUTH": {

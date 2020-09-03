@@ -11,6 +11,7 @@ body {
 
 h1, h2 {
   letter-spacing: 1px;
+  word-break: break-word;
 }
 
 a {
@@ -23,6 +24,7 @@ a {
 
 p {
   margin: 0;
+  word-break: break-word;
 }
 
 .cdk-overlay-pane,
