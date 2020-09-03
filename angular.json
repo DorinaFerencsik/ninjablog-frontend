@@ -28,9 +28,16 @@
               "src/assets"
             ],
             "styles": [
+              "src/styles/_media-queries.scss",
               "src/styles/_theme.scss",
+              "src/styles/_variables.scss",
               "src/styles/styles.scss"
             ],
+            "stylePreprocessorOptions": {
+              "includePaths": [
+                "src/styles"
+              ]
+            },
             "scripts": []
           },
           "configurations": {
@@ -93,9 +100,16 @@
               "src/assets"
             ],
             "styles": [
+              "src/styles/_media-queries.scss",
               "src/styles/_theme.scss",
+              "src/styles/_variables.scss",
               "src/styles/styles.scss"
             ],
+            "stylePreprocessorOptions": {
+              "includePaths": [
+                "src/styles"
+              ]
+            },
             "scripts": []
           }
         },

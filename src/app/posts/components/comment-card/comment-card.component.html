@@ -1,0 +1,16 @@
+<div class="background comment-container ">
+  <ng-container *ngIf="comments?.length; else noComments">
+    <div
+      *ngFor="let comment of comments"
+      class="comment-wrapper"
+      fxLayout="row"
+      fxLayoutGap="10px">
+      <app-user-avatar [name]="comment.name" fxFlex="40px"></app-user-avatar>
+      <p>{{ comment.body }}</p>
+    </div>
+  </ng-container>
+  
+  <ng-template #noComments>
+    <p>{{ 'COMMENT.NO_RESULT' | translate }}</p>
+  </ng-template>
+</div>

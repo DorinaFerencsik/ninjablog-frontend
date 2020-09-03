@@ -1,0 +1,18 @@
+<div
+  class="highlighted-card"
+  fxLayout="row"
+  fxLayout.lt-lg="column"
+  fxLayoutGap="20px" >
+
+  <div fxFlex="60%" class="content">
+    <h1>{{post.title}}</h1>
+    <p class="author">By {{user?.name}}</p>
+    <div>{{post.body}}</div>
+  </div>
+
+  <app-comment-card
+    fxFlex="40%"
+    class="comments"
+    [comments]="comments"
+  ></app-comment-card>
+</div>

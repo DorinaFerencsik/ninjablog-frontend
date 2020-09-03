@@ -1,0 +1,40 @@
+{
+  "COMMON": {
+    "BUTTON": {
+      "CLOSE": "Close",
+      "CANCEL": "Cancel",
+      "CREATE": "Create",
+      "DARK_MODE": "Dark mode"
+    },
+    "ERROR": {
+      "REQUIRED": "Required field",
+      "MAX_LENGTH": "Exceeds max. length of {{max}} characters"
+    }
+  },
+  "AUTH": {
+    "GREETING": "Hi, ",
+    "LOGIN": "Login with random user",
+    "LOGOUT": "Logout",
+    "LOGIN_DIALOG": {
+      "TITLE": "You need to log in to access this function"
+    }
+  },
+  "POST": {
+    "LIST": {
+      "RECENT": "Recent posts",
+      "LOAD_MORE": "Load more",
+      "ADD": "Add new post"
+    },
+    "CREATE": {
+      "TITLE": "New post",
+      "FIELD": {
+        "TITLE": "Title",
+        "BODY": "Body"
+      }
+    }
+  },
+  "COMMENT": {
+    "TITLE": "Comments",
+    "NO_RESULT": "There aren't any comments"
+  }
+}

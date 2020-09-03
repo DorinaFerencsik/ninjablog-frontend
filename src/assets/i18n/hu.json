@@ -1,0 +1,40 @@
+{
+  "COMMON": {
+    "BUTTON": {
+      "CLOSE": "Bezárás",
+      "CANCEL": "Mégse",
+      "CREATE": "Létrehozás",
+      "DARK_MODE": "Sötét mód"
+    },
+    "ERROR": {
+      "REQUIRED": "Kötelező mező",
+      "MAX_LENGTH": "Meghaladja a max. {{max}} karaktert"
+    }
+  },
+  "AUTH": {
+    "GREETING": "Üdv, ",
+    "LOGIN": "Bejelentkezés random felhasználóval",
+    "LOGOUT": "Kijelentkezés",
+    "LOGIN_DIALOG": {
+      "TITLE": "A funkció eléréséhez be kell jelentkeznie"
+    }
+  },
+  "POST": {
+    "LIST": {
+      "RECENT": "Legújabb posztok",
+      "LOAD_MORE": "Több betöltése",
+      "ADD": "Új poszt közzététele"
+    },
+    "CREATE": {
+      "TITLE": "Új poszt",
+      "FIELD": {
+        "TITLE": "Cím",
+        "BODY": "Tartalom"
+      }
+    }
+  },
+  "COMMENT": {
+    "TITLE": "Kommentek",
+    "NO_RESULT": "Nincsenek kommentek"
+  }
+}

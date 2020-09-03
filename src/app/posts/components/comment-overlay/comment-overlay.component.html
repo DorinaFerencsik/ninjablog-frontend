@@ -1,0 +1,10 @@
+<div fxLayout="row" fxLayoutAlign="space-between center">
+  <h1>{{ 'COMMENT.TITLE' | translate }}</h1>
+  <button mat-icon-button (click)="close()">
+    <mat-icon>close</mat-icon>
+  </button>
+</div>
+
+<app-comment-card
+  [comments]="data"
+></app-comment-card>
