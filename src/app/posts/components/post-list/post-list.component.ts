@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-
 import { MatDialog } from '@angular/material/dialog';
+
+import { AuthService } from 'src/app/auth/services/auth.service';
+
 import { IPost } from '../../interfaces/post.interface';
 import { ApiPostService } from '../../services/api-post.service';
 import { CreatePostDialogComponent } from '../create-post-dialog/create-post-dialog.component';
@@ -21,6 +23,7 @@ export class PostListComponent implements OnInit {
   private fullPostList: IPost[];
 
   constructor(private apiService: ApiPostService,
+              private authService: AuthService,
               private dialog: MatDialog) { }
 
   public ngOnInit(): void {
@@ -32,11 +35,13 @@ export class PostListComponent implements OnInit {
   }
 
   public openCreateDialog() {
-    const dialogRef = this.dialog.open(CreatePostDialogComponent, { panelClass: 'wide' });
-    dialogRef.afterClosed().subscribe(result => {
-      if (result) {
-        this.postList.push(result);
-      }
+    this.authService.loggedInPreCheck(() => {
+      const dialogRef = this.dialog.open(CreatePostDialogComponent, { panelClass: 'wide' });
+      dialogRef.afterClosed().subscribe(result => {
+        if (result) {
+          this.postList.push(result);
+        }
+      });
     });
   }
 

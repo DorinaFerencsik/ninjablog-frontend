@@ -1,6 +1,7 @@
 import { OverlayModule} from '@angular/cdk/overlay';
 import { NgModule } from '@angular/core';
 
+import { AuthModule } from '../auth/auth.module';
 import { SharedModule } from '../shared/shared.module';
 
 import { FooterComponent } from './components/footer/footer.component';
@@ -18,6 +19,7 @@ const components = [
   imports: [
     OverlayModule,
     SharedModule,
+    AuthModule,
   ],
   exports: [
     ...components,

@@ -14,7 +14,10 @@
   "AUTH": {
     "GREETING": "Üdv, ",
     "LOGIN": "Bejelentkezés random felhasználóval",
-    "LOGOUT": "Kijelentkezés"
+    "LOGOUT": "Kijelentkezés",
+    "LOGIN_DIALOG": {
+      "TITLE": "A funkció eléréséhez be kell jelentkeznie"
+    }
   },
   "POST": {
     "LIST": {

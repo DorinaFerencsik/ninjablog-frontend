@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
 import { MatSlideToggleChange } from '@angular/material/slide-toggle';
 import { Subject } from 'rxjs';
-import { tap } from 'rxjs/operators';
 
 import { IUser } from 'src/app/auth/interfaces/user.interface';
 import { AuthService } from 'src/app/auth/services/auth.service';
@@ -20,7 +19,6 @@ export class HeaderComponent {
   constructor(private themeService: ThemeService,
               private authService: AuthService) {
     this.user$ = this.authService.getUser();
-    this.user$.pipe(tap(user => console.log(user))).subscribe();
   }
 
   public toggleDarkMode(event: MatSlideToggleChange) {
@@ -28,7 +26,7 @@ export class HeaderComponent {
   }
 
   public onLogin() {
-    this.authService.login();
+    this.authService.login().subscribe();
   }
 
   public onLogout() {

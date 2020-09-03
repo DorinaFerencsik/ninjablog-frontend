@@ -1,7 +1,9 @@
 import { Injectable } from '@angular/core';
-import { BehaviorSubject } from 'rxjs';
-import { map } from 'rxjs/operators';
+import { MatDialog } from '@angular/material/dialog';
+import { BehaviorSubject, Observable, of } from 'rxjs';
+import { switchMap, tap } from 'rxjs/operators';
 
+import { LoginDialogComponent } from '../components/login-dialog/login-dialog.component';
 import { IUser } from '../interfaces/user.interface';
 import { ApiAuthService } from './api-auth.service';
 
@@ -12,15 +14,16 @@ export class AuthService {
 
   private user$ = new BehaviorSubject<IUser>(null);
 
-  constructor(private apiService: ApiAuthService) { }
+  constructor(private apiService: ApiAuthService,
+              private dialog: MatDialog) { }
 
-  public login() {
+  public login(): Observable<any> {
     const id = Math.floor(Math.random() * (10 - 1) + 2);
-    this.apiService
+    return this.apiService
       .getUser(id)
       .pipe(
-        map(user => this.user$.next(user))
-      ).subscribe();
+        tap(user => this.user$.next(user))
+      );
   }
 
   public logout() {
@@ -33,5 +36,23 @@ export class AuthService {
 
   public getUserDetail() {
     return this.user$.value;
+  }
+
+  public loggedInPreCheck(callback) {
+    if (this.user$.value) {
+      callback();
+    } else {
+      this.dialog.open(LoginDialogComponent)
+        .afterClosed()
+        .pipe(
+          switchMap(result => result ? this.login() : of(null)),
+          tap(user => {
+            if (user) {
+              callback();
+            }
+          })
+        )
+      .subscribe();
+    }
   }
 }

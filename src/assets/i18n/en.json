@@ -14,7 +14,10 @@
   "AUTH": {
     "GREETING": "Hi, ",
     "LOGIN": "Login with random user",
-    "LOGOUT": "Logout"
+    "LOGOUT": "Logout",
+    "LOGIN_DIALOG": {
+      "TITLE": "You need to log in to access this function"
+    }
   },
   "POST": {
     "LIST": {
