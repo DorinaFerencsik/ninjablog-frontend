@@ -21,4 +21,6 @@ Run `ng build` to build the project. The build artifacts will be stored in the `
 |CDK|`~9.2.4`            |
 |Angular Material|`~9.2.4`|
 |RxJS|`~6.5.4`|
+
+
 See `package.json` file for detailed version informations.
